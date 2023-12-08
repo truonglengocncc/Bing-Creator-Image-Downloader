@@ -14,6 +14,7 @@ from datetime import date
 from datetime import timezone
 from urllib.parse import unquote
 import tempfile
+import shutil
 
 import aiofiles
 import aiofiles.tempfile
@@ -109,58 +110,51 @@ class BingCreatorImageDownload:
             raise Exception(f"Fetching collection failed with Error code"
                             f"{response.status_code}: {response.reason};{response.text}")
 
-    # async def __download_and_zip_images(self) -> None:
-        # """
-        # Downloads all images from the gathered image data and zips them.
-        # :return: None
-        # """
-        # logging.info(f"Starting download of {len(self.__image_data)} images.")
-        # with zipfile.ZipFile(f"bing_images_{date.today()}.zip", "w") as zip_file:
-        #     async with aiofiles.tempfile.TemporaryDirectory('wb') as temp_dir:
-        #         tasks = [
-        #             self.__download_and_save_image(image_dict, temp_dir)
-        #             for image_dict
-        #             in self.__image_data
-        #         ]
-        #         file_names = await asyncio.gather(*tasks)
-        #         file_names = list(filter(None, file_names))
-        #         for file_name, collection_name in file_names:
-        #             file_name: str
-        #             zip_file.write(file_name, arcname=os.path.join(collection_name, os.path.basename(file_name)))
-
-    
-
     async def __download_and_zip_images(self) -> None:
         """
         Downloads all images from the gathered image data and zips them.
         :return: None
         """
         logging.info(f"Starting download of {len(self.__image_data)} images.")
-        zip_name = f"bing_images_{date.today()}.zip"
-        with zipfile.ZipFile(zip_name, "w") as zip_file:
-            async with tempfile.TemporaryDirectory() as temp_dir:
+        with zipfile.ZipFile(f"bing_images_{date.today()}.zip", "w") as zip_file:
+            async with aiofiles.tempfile.TemporaryDirectory('wb') as temp_dir:
                 tasks = [
                     self.__download_and_save_image(image_dict, temp_dir)
-                    for image_dict in self.__image_data
+                    for image_dict
+                    in self.__image_data
                 ]
                 file_names = await asyncio.gather(*tasks)
                 file_names = list(filter(None, file_names))
                 for file_name, collection_name in file_names:
-                    new_file_name = await self.__handle_existing_file(file_name)
-                    zip_file.write(new_file_name, arcname=os.path.join(collection_name, os.path.basename(new_file_name)))
+                    file_name: str
+                    zip_file.write(file_name, arcname=os.path.join(collection_name, os.path.basename(file_name)))
 
-    async def __handle_existing_file(self, file_name):
-        count = 1
-        new_file_name = file_name
-        while os.path.exists(new_file_name):
-            file_name_parts = os.path.splitext(file_name)
-            new_file_name = f"{file_name_parts[0]} ({count}){file_name_parts[1]}"
-            count += 1
+    # async def __download_and_zip_images(self) -> None:
+    #     """
+    #     Downloads all images from the gathered image data and zips them.
+    #     :return: None
+    #     """
+    #     logging.info(f"Starting download of {len(self.__image_data)} images.")
+    #     temp_zip = tempfile.NamedTemporaryFile(delete=False)
+    #     temp_zip.close()
+    #     name_final = ''
 
-        if new_file_name != file_name:
-            os.rename(file_name, new_file_name)
+    #     with zipfile.ZipFile(temp_zip.name, "w") as zip_file:
+    #         async with aiofiles.tempfile.TemporaryDirectory('wb') as temp_dir:
+    #             tasks = [
+    #                 self.__download_and_save_image(image_dict, temp_dir)
+    #                 for image_dict
+    #                 in self.__image_data
+    #             ]
+    #             file_names = await asyncio.gather(*tasks)
+    #             file_names = list(filter(None, file_names))
+    #             for file_name, collection_name in file_names:
+    #                 arc_name = os.path.join(collection_name, os.path.basename(file_name))
+    #                 zip_file.write(file_name, arcname=arc_name)
+    #                 name_final = collection_name
 
-        return new_file_name
+    #     final_zip_name = f"bing_images_{name_final}_{date.today()}.zip"  # Sử dụng collection_name ở đây
+    #     shutil.move(temp_zip.name, final_zip_name)
 
     @staticmethod
     async def __download_and_save_image(
