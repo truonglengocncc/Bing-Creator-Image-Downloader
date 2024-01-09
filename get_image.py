@@ -36,8 +36,8 @@ def process_json_files(folder_path):
             temp_dir = f'temp_{os.path.splitext(filename)[0]}'  # Tạo thư mục tạm thời với tên của file JSON
             os.makedirs(temp_dir, exist_ok=True)
             
-            print(f'Downloading... in {download_urls}')
             for url in download_urls:
+                print(f'Downloading... in {url}')
                 response = requests.get(url)
                 zip_file = zipfile.ZipFile(BytesIO(response.content))
                 zip_file.extractall(temp_dir)
