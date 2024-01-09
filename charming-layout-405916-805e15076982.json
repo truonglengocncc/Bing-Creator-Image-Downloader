@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "charming-layout-405916",
+  "private_key_id": "805e150769829c1e30b99ae03ec426380353f0e6",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDJool9dlUc4jOY\n+z2O97CG6Zqa1OozxqMLwByuoiK48Ll9SNABHbq4lMAhBJxEtZRwrkVK8BqOk4Np\nzGPFbxjwZEEdU380MZImvVtVg0E7n0TPqcd7wZAwHpisteQq7tkKuA3qr86GAS21\nG7bYAthqOLABuMv7MxjtIEP7wRDDPMdKzh/fdP+KnqrKM71dMpQULIcKpNjoLss7\nLpVKoFFBXydwmffI0nOJ83KYe8sg04/EbwYiGt5DXE8Oyn+7NW5H/f2/bTmho21K\nXDLyil2qKz5jcyQClgbgeXZ57d/82TWs2U/bkT8F9z1jFiKmpxBtF/iDA4m/Okn3\n7xvVqRYBAgMBAAECggEARebTQ2uClkDVInP3I1k7GYpizsqBZvG2FJzFVMVgxDyw\nEX7snXZxBQyMjuXKRwesLmQ8IX6btlHtfQAelpOtUalv6XrI3o9Q251JzJt0Qfc1\nI8j4Hy87jXMN+tIUB85F8DFeob3RGyPNdLvm53wVCr4cRnyKOsu8GHjXGLAV35jU\ncwwdtw9RqBzjj/AwiuRkHUd6IVnLpNJNp4ofgSfrGs4nft5Bza8vR4twDRJqCmr1\n/0hND5Xuw2XRv2qODrci+eOs1yxvyPmuR60CjYGbY82I5UTSevJGCi+aFyIkt2Qa\nuzV2EuW5AlS88P/fDilCXo2JzeDLm2sEAjXLrutfAQKBgQD2UwndWJmLPlY1sNxB\nZkHoLjvAuZ0ggboEwycnUaY2m1PrRZ+n9CiTVdMFu4UmZ8idt408tsuqv7gFR9Tq\nmbYE3LclSHyRFpxjNhMUJ1jDYzPbmUeJvg3UboVMywoG60ZTQbZlReSM9N+rwMLk\nAjCzKzacC0SF5LWrZ+dTc2S3awKBgQDRjh19n5bZWi5dhJErQPr1by8/uhcT/7f+\nEKPVsA89O2Sg+pjzwKQkGA/vHGUTc5P0dXbrw50Z/Ue+5rsE+zgudJOR2iu2XSEZ\nNSZkFWxGNHogmEIM7fF4by+bi5jlwt8eo+xGy3ImcCA7CMLWpF5hfv8xnMPGmbjo\nVD8nKK1/QwKBgC63Dt7gp7YFq3nhQdRRXVx4MDLbwNXiZHH0xN8rF/exO5gaCy5i\nGrPeiffDWXwwIJbwsaN7E2Mdmvu9ZL7dSezgIwe6GI23mQ8juTiQQcBEdxhFmJCh\n76ODFlq7AvrO8fZmNv475B1rb2P2Wb++PpgsMN4lMOinuGB6gx+LeeVjAoGAfqGF\neqtcqd2QFR0N6Hhs7rGQeM8IMSKfWd1OU8v/eX4RkiG9Gdc4mUMdJd4fykBWkSwG\nf/QGVHU0zMx7CUiSK6hwoHuZXKssXCI9H8++TTJa9qVrjIqhF6kAuNsDuxwmXkqq\ndiFsyoOJRoNF0hUjn4Dxz1YvDC1KisKWIyC2rycCgYA+xRHR2krn/Rjy5KY1s5MN\n0jyD8JRxFO5KNRkOPvAi9kFgsIahJ5ZIV7psydLA8Wi7BVhZ+8sVFztHVMFulXlu\n2c5+E5KgP8poAa6kibfftetlPEev7oFalUaogEzVzUrNGM7Os5HL2QbK8Qloz94H\nhbL+9aYQoAb/B8frqdfO2g==\n-----END PRIVATE KEY-----\n",
+  "client_email": "capsure-ai-action@charming-layout-405916.iam.gserviceaccount.com",
+  "client_id": "105451642441965268917",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/capsure-ai-action%40charming-layout-405916.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
